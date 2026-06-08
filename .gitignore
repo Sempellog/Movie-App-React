@@ -26,3 +26,4 @@ vite
 *.sw?
 .env
 README.md
+.env
