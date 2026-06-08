@@ -13,7 +13,7 @@ function Search({ watchList, setWatchList }) {
   const navigate = useNavigate();
 
   async function searchMovies() {
-    if (query.trim === "") return;
+    if (query.trim() === "") return;
 
     setLoading(true);
     setError(null);
@@ -24,7 +24,7 @@ function Search({ watchList, setWatchList }) {
       );
       const data = await response.json();
 
-      if (data.Response === true) {
+      if (data.Response === "True") {
         setMovies(data.Search);
       } else {
         setMovies([]);
