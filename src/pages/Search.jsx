@@ -7,7 +7,7 @@ const API_KEY = import.meta.env.VITE_OMDB_KEY;
 function Search({ watchList, setWatchList }) {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
-  const [loading, setLoadind] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const navigate = useNavigate();
