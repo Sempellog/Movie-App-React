@@ -9,6 +9,7 @@ function MovieDetail({ watchList, setWatchList }) {
   const [loading, setLoading] = useState(null);
 
   const isInWatchList = watchList.some((m) => m.imdbID === id);
+  const navigate = useNavigate();
 
   const toggleWatchList = () => {
     if (isInWatchList) {
@@ -51,8 +52,7 @@ function MovieDetail({ watchList, setWatchList }) {
         }}
         className="text-yellow-400 hover:text-yellow-300 mb-6 flex items-center gap-2"
       >
-        {" "}
-        ← Back{" "}
+        ← Back
       </button>
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-8">
         <img
@@ -75,7 +75,7 @@ function MovieDetail({ watchList, setWatchList }) {
             <span className="text-gray-400 text-sm">/ 10</span>
           </div>
           <p className="text-gray-300 mb-6 leading-relaxed">{movie.Plot}</p>
-          <div className="grid grid-cols-2 gap-4 mb-6">
+          <div>
             <p className="text-gray-500 text-sm ">Director</p>
             <p className="text-white text-sm">{movie.Director}</p>
           </div>
