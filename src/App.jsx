@@ -8,16 +8,13 @@ import "./App.css";
 import { useState, useEffect } from "react";
 
 function App() {
-
   const [watchList, setWatchList] = useState(() => {
     const saved = localStorage.getItem("watchList");
     return saved ? JSON.parse(saved) : [];
   });
-  
-    useEffect(() => {
-      localStorage.setItem("watchList", JSON.stringify(watchList))
-    }, [watchList])
-  
+  useEffect(() => {
+    localStorage.setItem("watchList", JSON.stringify(watchList));
+  }, [watchList]);
 
   return (
     <BrowserRouter>
