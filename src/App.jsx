@@ -5,10 +5,19 @@ import Search from "./pages/Search";
 import WatchList from "./pages/WatchList";
 import Navbar from "./components/Navbar";
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [watchList, setWatchList] = useState([]);
+
+  const [watchList, setWatchList] = useState(() => {
+    const saved = localStorage.getItem("watchList");
+    return saved ? JSON.parse(saved) : [];
+  });
+  
+    useEffect(() => {
+      localStorage.setItem("watchList", JSON.stringify(watchList))
+    }, [watchList])
+  
 
   return (
     <BrowserRouter>
