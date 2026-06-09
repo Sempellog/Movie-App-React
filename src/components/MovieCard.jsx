@@ -26,7 +26,7 @@ function MovieCard({ movie, watchList, setWatList, onClick }) {
       />
       <button
         onClick={toggleWatchList}
-        className="absolute top-2 right-2 bg-black bg-opacity-70 text-white rounded-full w-8 h-8 items-center justify-center hover:bg-yellow hover:text-gray-900"
+        className="absolute top-3 right-1 bg-black bg-opacity-70 rounded-full text-white w-8 h-8 items-center justify-center hover:bg-yellow-400 hover:text-gray-600"
       >
         {isInWatchList ? "★" : "☆"}
       </button>
